@@ -49,13 +49,13 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center gap-16 items-center align-center h-screen w-full relative bg-[#E6F0F1]">
+    <div className="flex flex-col justify-center gap-10 items-center align-center h-screen w-full relative bg-[#E6F0F1]">
       <img src={Logo} />
       <img src={Circle} className="absolute left-0 bottom-0" />
 
       <div className="space-y-4 font-semibold">
-        <p className="text-2xl font-bold">Verification</p>
-        <p>Enter 6 digit sent to phone number</p>
+        <p className=" text-3xl font-extrabold">Verification</p>
+        <p className="text-xl font-bold ">Enter 6 digit sent to phone number</p>
         <p>
           {phoneNumber}
           <span
@@ -79,7 +79,7 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
           );
         })}
       </div>
-      <div className="flex flex-col bg-cyan-100 py-6 px-10 rounded-[50%] text-xl">
+      <div className="flex flex-col bg-[#8DB9C0] py-6 px-10 rounded-[50%] text-l">
         <span>{countDown}</span>
         <span className="text-sm">Sec</span>
       </div>
