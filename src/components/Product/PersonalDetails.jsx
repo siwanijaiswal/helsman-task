@@ -10,30 +10,32 @@ const PersonalDetails = () => {
   };
 
   return (
-    <Card heading="Personal Details">
-      <div className="space-y-4">
-        <div>
-          <p className="font-semibold">Name:</p>
-          <p>{customerDetails.name}</p>
+    <div className="p-8 w-[50%]">
+      <Card heading="Personal Details">
+        <div className="space-y-4">
+          <div>
+            <p className="font-semibold">Name:</p>
+            <p>{customerDetails.name}</p>
+          </div>
+          <div>
+            <p className="font-semibold">Email ID:</p>
+            <p>{customerDetails.email}</p>
+          </div>
+          <div>
+            <p className="font-semibold">Contact:</p>
+            <p>{customerDetails.contact}</p>
+          </div>
+          <div>
+            <p className="font-semibold">Company Name:</p>
+            <p className="text-cyan-600">{customerDetails.companyName}</p>
+          </div>
+          <div>
+            <p className="font-semibold">Company GST No:</p>
+            <p className="text-cyan-600">{customerDetails.companyGstNo}</p>
+          </div>
         </div>
-        <div>
-          <p className="font-semibold">Email ID:</p>
-          <p>{customerDetails.email}</p>
-        </div>
-        <div>
-          <p className="font-semibold">Contact:</p>
-          <p>{customerDetails.contact}</p>
-        </div>
-        <div>
-          <p className="font-semibold">Company Name:</p>
-          <p>{customerDetails.companyName}</p>
-        </div>
-        <div>
-          <p className="font-semibold">Company GST No:</p>
-          <p>{customerDetails.companyGstNo}</p>
-        </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };
 

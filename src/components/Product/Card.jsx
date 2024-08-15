@@ -5,7 +5,7 @@ const Card = (props) => {
       <div className="px-6 py-4">
         <h2 className="text-xl font-bold text-left">{heading}</h2>
       </div>
-      <div className="h-[1px] bg-gray-800 mx-6"></div>
+      <div className="h-[1px] bg-[#AABAB9] mx-6"></div>
       <div className="px-6 py-4">{children}</div>
     </div>
   );

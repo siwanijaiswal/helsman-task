@@ -19,7 +19,7 @@ const OrderDetails = () => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 w-[50%]">
       <Card heading="Order Details">
         <div className="space-y-2">
           <div className="flex justify-between">
@@ -44,7 +44,7 @@ const OrderDetails = () => {
             </button>
           </div>
         </div>
-        <div className="h-[1px] bg-gray-800 my-4"></div>
+        <div className="h-[1px] bg-[#AABAB9] my-4"></div>
         <div className="grid grid-cols-2">
           <div className="space-y-4">
             <div>

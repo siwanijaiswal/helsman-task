@@ -6,8 +6,10 @@ import ProductDetails from "./ProductDetails.jsx";
 const Product = () => {
   return (
     <>
-      <OrderDetails />
-      <PersonalDetails />
+      <div className="flex justify-between">
+        <OrderDetails />
+        <PersonalDetails />
+      </div>
       <ProductDetails />
     </>
   );

@@ -6,7 +6,7 @@ import GetOtp from "./GetOtp";
 const LogIn = () => {
   const [phoneNumber, setPhoneNumber] = useState();
   const [confirmObj, setConfirmObj] = useState("+91 90232 90926");
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   return (
     <div className="flex text-center">
