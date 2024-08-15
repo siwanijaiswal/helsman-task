@@ -1,7 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import {
+  getAuth,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from "firebase/auth";
 
 const env = import.meta.env;
+
 const firebaseConfig = {
   apiKey: env.VITE_FIREBASE_API_KEY,
   authDomain: env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -12,6 +17,15 @@ const firebaseConfig = {
   measurementId: env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+
+export const setUpRecaptcha = (phoneNumber) => {
+  const recaptchaVerifier = new RecaptchaVerifier(
+    auth,
+    "recaptcha-container",
+    {}
+  );
+  recaptchaVerifier.render();
+  return signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier);
+};

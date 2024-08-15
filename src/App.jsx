@@ -1,9 +1,18 @@
+import LogIn from "./components/Auth/LogIn";
+import Product from "./components/product/product";
+import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl text-red-600 font-bold underline">
-        Vite + React
-      </h1>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<LogIn />} />
+        <Route path="product" element={<Product />} />
+      </Routes>
     </>
   );
 }
