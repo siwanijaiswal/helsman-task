@@ -38,15 +38,13 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
   };
 
   const verify = async () => {
-    console.log(otp);
     const OTP = otp.join("");
-    console.log(OTP);
     try {
       await confirmObj.confirm(OTP);
       toast.success("User Authenticated");
       navigate("/product");
     } catch (err) {
-      console.log(err.message);
+      toast.error(err.message);
     }
   };
 

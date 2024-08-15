@@ -1,6 +1,7 @@
 import Logo from "../../assets/logo.svg";
 import Circle from "../../assets/circle.svg";
 import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { setUpRecaptcha } from "../../utils/firebase/firebase";
 import { toast } from "react-toastify";
 
