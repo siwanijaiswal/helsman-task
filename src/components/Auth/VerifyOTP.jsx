@@ -3,10 +3,12 @@ import Circle from "../../assets/circle.svg";
 import Edit from "../../assets/edit.svg";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
   const [countDown, setCountDown] = useState(15);
   const [otp, setOtp] = useState(new Array(6).fill(""));
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (countDown > 0) {
@@ -42,6 +44,7 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
     try {
       await confirmObj.confirm(OTP);
       toast.success("User Authenticated");
+      navigate("/product");
     } catch (err) {
       console.log(err.message);
     }
