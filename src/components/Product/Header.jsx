@@ -1,5 +1,5 @@
 import React from "react";
-import NotifyIcon from "../../assets/notifyicon.png";
+import NotifyIcon from "../../assets/notifyIcon.png";
 import SettingIcon from "../../assets/settingicon.svg";
 import Userprofile from "../../assets/userprofile.png";
 import { Link } from "react-router-dom";
