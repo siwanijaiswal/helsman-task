@@ -1,3 +1,6 @@
 .otp-button {
   background: linear-gradient(273.19deg, #00aea2 -12.39%, #065e6c 40.06%);
 }
+.nav-button img {
+  height: 24px !important;
+}

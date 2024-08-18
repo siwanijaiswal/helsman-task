@@ -10,7 +10,7 @@ const PersonalDetails = () => {
   };
 
   return (
-    <div className="p-8 w-[50%]">
+    <div className="mt-8 h-100 w-[450px]">
       <Card heading="Personal Details">
         <div className="space-y-4">
           <div>
@@ -29,7 +29,7 @@ const PersonalDetails = () => {
             <p className="font-semibold">Company Name:</p>
             <p className="text-cyan-600">{customerDetails.companyName}</p>
           </div>
-          <div>
+          <div className="!mb-[102px]">
             <p className="font-semibold">Company GST No:</p>
             <p className="text-cyan-600">{customerDetails.companyGstNo}</p>
           </div>

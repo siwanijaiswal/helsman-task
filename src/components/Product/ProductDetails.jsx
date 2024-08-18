@@ -22,8 +22,8 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="p-8 w-[50%]">
-      <Card>
+    <div className="pt-0 pr-[20px] pb-4 pl-8 w-[700px]">
+      <Card heading="Product Details">
         <div className="space-y-4">
           <div className="flex flex-wrap">
             {product.images.map((image, ind) => (
@@ -56,6 +56,7 @@ const ProductDetails = () => {
               <p>{product.qty} Items</p>
             </div>
           </div>
+          <p className="text-lg text-gray-400">Printing:</p>
           <div className="flex flex-wrap">
             <img
               className="w-[80px] h-[80px] rounded-[12px] m-[5px]"

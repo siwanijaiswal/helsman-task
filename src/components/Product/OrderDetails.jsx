@@ -19,7 +19,7 @@ const OrderDetails = () => {
   };
 
   return (
-    <div className="p-8 w-[50%]">
+    <div className="pt-8 pr-[20px] pb-4 pl-8 w-[700px]">
       <Card heading="Order Details">
         <div className="space-y-2">
           <div className="flex justify-between">
