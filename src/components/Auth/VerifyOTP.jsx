@@ -1,13 +1,14 @@
 import Logo from "../../assets/logo.svg";
 import Circle from "../../assets/circle.svg";
 import Edit from "../../assets/edit.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
+const VerifyOTP = ({ phoneNumber, confirmObj, setStep, length = 6 }) => {
   const [countDown, setCountDown] = useState(15);
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const [otp, setOtp] = useState(new Array(length).fill(""));
+  const inputs = useRef([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,6 +35,31 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
+      console.log("hi");
+
+      // Move focus to the next input
+      if (index < length - 1) {
+        console.log("hi");
+        setTimeout(() => {
+          inputs.current[index + 1]?.focus();
+        }, 50);
+        console.log(inputs.current[index]);
+      }
+    }
+
+    // Move focus to previous input on backspace
+    if (value === "" && index > 0) {
+      console.log("hey");
+      inputs.current[index - 1].focus();
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && otp[index] === "") {
+      // Move focus to previous input on backspace if current input is empty
+      if (index > 0) {
+        inputs.current[index - 1].focus();
+      }
     }
   };
 
@@ -74,6 +100,8 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
               className="border rounded-lg w-10 h-10 text-center text-xl bg-white text-gray-900"
               value={otp[index]}
               onChange={(e) => handleChange(e, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              ref={(el) => (inputs.current[index] = el)}
               maxLength={1}
             />
           );
@@ -101,5 +129,4 @@ const VerifyOTP = ({ phoneNumber, confirmObj, setStep }) => {
     </div>
   );
 };
-
 export default VerifyOTP;
